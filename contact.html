@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Portofoliu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+    <div class="container header-container">
+      <!-- Left section with logo (now a home button) -->
+      <div class="header-left">
+        <a href="index.html">
+          <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
+        </a>
+      </div>
+      <!-- Right section with name -->
+      <div class="header-right">
+        <h1 class="logo">Vladuzzul</h1>
+      </div>
+    </div>
+    <!-- Buttons section -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="about.html">Despre</a></li>
+        <li><a href="projects.html">Proiecte</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content fade-in container">
+    <section class="contact-section">
+      <h2 class="section-title">Contactează-mă</h2>
+      <form class="contact-form">
+        <label for="name">Nume</label>
+        <input type="text" id="name" name="name" placeholder="Prenumele tău" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@exemplu.com" required>
+
+        <label for="message">Mesaj</label>
+        <textarea id="message" name="message" rows="5" placeholder="Scrie mesajul tău..." required></textarea>
+
+        <button type="submit" class="btn-primary">Trimite</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 [Numele Tău]. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+/* Stil modern pentru portofoliu */
+
+:root {
+    --bg: #f9f9f9;
+    --text: #1a1a1a;
+    --accent: #007aff;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --dark-bg: #1c1c1c;
+    --dark-text: #d8d7d7;
+    --dark-card: #2a2a2a;
+    --transition: 0.3s ease-in-out;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color var(--transition), color var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body.dark-mode {
+    --bg: var(--dark-bg);
+    --text: var(--dark-text);
+    --card-bg: var(--dark-card);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  /* Header container styling */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* Left section with logo */
+  .header-left {
+    flex: 2; /* Bigger piece */
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 80px;
+    max-width: 100%;
+    cursor: pointer; /* Indicate it's clickable */
+  }
+
+  /* Right section with name */
+  .header-right {
+    flex: 3; /* Bigger piece */
+    text-align: right;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  /* Navbar styling */
+  .navbar {
+    margin-top: 1rem;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem; /* Increased space between links */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow links to wrap when the window is smaller */
+    list-style: none; /* Remove dots from links */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    flex: 0 1 auto; /* Allow links to shrink if needed */
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.2rem; /* Slightly bigger font size */
+    padding: 0.8rem 1.5rem; /* More spacious padding */
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .navbar a:hover {
+    color: var(--accent); /* Highlight color on hover */
+    background-color: rgba(0, 122, 255, 0.1); /* Subtle background on hover */
+    border-radius: 8px; /* Rounded corners for hover effect */
+  }
+  
+  /* Remove menu toggle button */
+  .menu-toggle {
+    display: none;
+  }
+  
+  .main-content {
+    padding: 3rem 0;
+    flex: 1;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button hover effect */
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    text-decoration: none;
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: center; /* Center text inside the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .hotel-card {
+    background: linear-gradient(135deg, #05010d, #0e0eeb);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-size: 200% 200%; /* To make the gradient larger for animation */
+    animation: cardAnimation 5s ease infinite; /* Animation for the card */
+}
+.besttn-best {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(145deg, var(--accent), #4200b5); /* Gradient background */
+    color: #fff;
+    border: none;
+    border-radius: 12px; /* Slightly rounder corners */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition), filter var(--transition);
+    text-decoration: none;
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: center; /* Center text inside the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 15px rgba(66, 0, 181, 0.3); /* Added glow effect */
+}
+
+.besttn-best:hover {
+    background: linear-gradient(145deg, #4200b5, var(--accent)); /* Reverse the gradient on hover */
+    transform: translateY(-5px) scale(1.05); /* Slightly larger and lifted */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 25px rgba(66, 0, 181, 0.3); /* Glow and shadow intensify */
+    filter: brightness(1.1); /* Add a little brightness to highlight the button */
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 99%; /* Start from the left */
+    }
+    100% {
+        background-position: 100% 1%; /* Move to the right */
+    }
+    
+}
+
+/* Style the "best" text */
+.best-project {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #949494;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #dedede, #0638ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%; /* To make the gradient larger for animation */
+    animation: gradientAnimation 5s ease infinite; /* Animation for the text */
+    transition: all 0.3s ease;
+}
+.best-project:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a glow effect */
+    color: #fff; /* Change text color on hover */
+    background: linear-gradient(135deg, #dedede, #0638ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%; /* To make the gradient larger for animation */
+    animation: gradientAnimation 5s ease infinite; /* Animation for the text */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4200b5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+  
+  /* Project card styling */
+  .project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  /* Add hover effect for footer links */
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Center the header content slightly to the left */
+  .centered-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .centered-header .navbar {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  /* Remove button-like appearance for dark mode toggle */
+  .dark-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem; /* Slightly bigger icon */
+    cursor: pointer;
+    transition: color var(--transition);
+  }
+
+  .dark-toggle:hover {
+    color: var(--accent);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      background: var(--card-bg);
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    .navbar ul.show {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+
+    .centered-header {
+      align-items: center; /* Center align for smaller screens */
+      text-align: center;
+    }
+
+    /* Numele pe mobil va fi aliniat la dreapta */
+    .header-right {
+      text-align: right;
+    }
+
+    .nav-links {
+      display: flex; /* Ensure buttons remain visible */
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 1rem; /* Space between buttons */
+      width: 100%; /* Full width for buttons */
+    }
+
+    .navbar a {
+      font-size: 1rem; /* Slightly smaller font size for phones */
+      padding: 0.6rem 1rem; /* Adjust padding for smaller screens */
+      text-align: center;
+    }
+
+    .dark-toggle {
+      margin-top: 1rem; /* Add spacing for dark mode toggle */
+    }
+
+    .header-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .header-left {
+      margin-bottom: 0.5rem;
+    }
+
+    .header-right {
+      margin-bottom: 1rem;
+    }
+  }
