@@ -1,58 +1,111 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Portofoliu</title>
+  <title>Contact - Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .social-links {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      justify-items: center;
+    }
+    .social-links li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-links a.linkedin {
+      background-color: #0077b5;
+    }
+    .social-links a.github {
+      background-color: #333;
+    }
+    .social-links a.twitter {
+      background-color: #1da1f2;
+    }
+    .social-links a.email {
+      background-color: #d93025;
+    }
+    .social-links a.tiktok {
+      background-color: #000000;
+    }
+    .social-links a.instagram {
+      background-color: #e1306c;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .hero-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section-text {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-    <div class="container header-container">
-      <!-- Left section with logo (now a home button) -->
-      <div class="header-left">
-        <a href="index.html">
-          <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
-        </a>
+  <header class="header">
+      <div class="container header-container">
+          <div class="header-left">
+              <a href="index.html">
+                  <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
+              </a>
+          </div>
+          <div class="header-right">
+              <h1 class="logo">Vladuzzul</h1>
+          </div>
       </div>
-      <!-- Right section with name -->
-      <div class="header-right">
-        <h1 class="logo">Vladuzzul</h1>
-      </div>
-    </div>
-    <!-- Buttons section -->
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="about.html">Despre</a></li>
-        <li><a href="projects.html">Proiecte</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
-      </ul>
-    </nav>
+      <nav class="navbar">
+          <ul class="nav-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
+          </ul>
+      </nav>
   </header>
 
   <main class="main-content fade-in container">
-    <section class="contact-section">
-      <h2 class="section-title">Contactează-mă</h2>
-      <form class="contact-form">
-        <label for="name">Nume</label>
-        <input type="text" id="name" name="name" placeholder="Prenumele tău" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="email@exemplu.com" required>
-
-        <label for="message">Mesaj</label>
-        <textarea id="message" name="message" rows="5" placeholder="Scrie mesajul tău..." required></textarea>
-
-        <button type="submit" class="btn-primary">Trimite</button>
-      </form>
+    <section class="socials-section">
+        <h2 class="hero-title">Ways to Reach Me</h2>
+        <p class="section-text">Feel free to connect with me through any of the platforms below:</p>
+        <br>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/vlad-cozma-635a28340/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/vladuzzul" target="_blank" class="github"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/vladuzz208" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="mailto:vladuzz208@icloud.com" class="email"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.tiktok.com/@vladuzz208" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="https://www.instagram.com/vladuzz208" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 [Numele Tău]. Toate drepturile rezervate.</p>
+      <p>&copy; 2025 Vladuzzul. All rights reserved.</p>
     </div>
   </footer>
 
