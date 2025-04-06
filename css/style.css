@@ -68,7 +68,7 @@
   }
 
   .logo-img {
-    height: 80px;
+    height: 120px;
     max-width: 100%;
     cursor: pointer; /* Indicate it's clickable */
   }
@@ -80,7 +80,7 @@
   }
 
   .logo {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--accent);
     margin: 0;
@@ -458,7 +458,7 @@
 
   /* Header adjustments */
   .header-container {
-    flex-direction: column; /* Stack logo and name vertically */
+    flex-direction: row; /* Stack logo and name vertically */
     text-align: center;
   }
 
@@ -468,16 +468,16 @@
   }
 
   .logo-img {
-    height: 80px; /* Smaller logo for mobile */
+    height: 100px; /* Smaller logo for mobile */
   }
 
   .logo {
-    font-size: 2rem; /* Smaller font size for the name */
+    font-size: 2.2rem; /* Smaller font size for the name */
   }
 
   /* Navbar adjustments */
   .nav-links {
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: row; /* Stack links vertically */
     gap: 1.2rem; /* Add spacing between links */
   }
 
@@ -516,13 +516,27 @@
   }
 }
 
+@media (max-width: 310px){
+  .nav-links {
+    grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+    gap: 0.5rem; /* Adjust spacing between links */
+    display: grid; /* Use grid layout */
+    justify-items: center; /* Center items in each cell */
+  }
+}
+
 /* Responsive Design for Extra Small Devices */
 @media (max-width: 480px) {
   /* Header adjustments */
   .logo-img {
     height: 90px; /* Even smaller logo for very small screens */
   }
-
+  .nav-links {
+    flex-direction: row; /* Stack links horizontallt */
+    gap: 0.5rem; /* Reduce spacing between links */
+  }
+  
+   
   /* Make the header smaller */
   .header {
     padding: 0rem 0; /* Reduce padding */
@@ -547,7 +561,7 @@
     font-size: 0.9rem; /* Smaller font size */
   }
   .logo {
-    font-size: 1.5rem; /* Smaller font size for the name */
+    font-size: 1.6rem; /* Smaller font size for the name */
   }
 
   /* Navbar adjustments */
