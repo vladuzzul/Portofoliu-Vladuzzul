@@ -1,14 +1,14 @@
 /* Stil modern pentru portofoliu */
 
 :root {
-    --bg: #f9f9f9;
+    --bg: hsl(0, 0%, 98%);
     --text: #1a1a1a;
-    --accent: #007aff;
+    --accent: #6c00d7;
     --card-bg: #ffffff;
     --border: #e0e0e0;
     --dark-bg: #1c1c1c;
-    --dark-text: #d8d7d7;
-    --dark-card: #2a2a2a;
+    --dark-text: #e1e1e1;
+    --dark-card: #292828;
     --transition: 0.3s ease-in-out;
   }
   
@@ -84,6 +84,62 @@
     font-weight: 700;
     color: var(--accent);
     margin: 0;
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+  }
+  .social-links li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .social-links a.linkedin {
+    background-color: #0077b5;
+  }
+  .social-links a.github {
+    background-color: #333;
+  }
+  .social-links a.twitter {
+    background-color: #1da1f2;
+  }
+  .social-links a.email {
+    background-color: #d93025;
+  }
+  .social-links a.tiktok {
+    background-color: #000000;
+  }
+  .social-links a.instagram {
+    background-color: #e1306c;
+  }
+  .social-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .section-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   /* Navbar styling */
@@ -393,3 +449,224 @@
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
+@media (max-width: 768px) {
+  /* General body adjustments */
+  body {
+    padding: 0;
+    font-size: 90%; /* Slightly smaller font size for better readability */
+  }
+
+  /* Header adjustments */
+  .header-container {
+    flex-direction: column; /* Stack logo and name vertically */
+    text-align: center;
+  }
+
+  .header-left, .header-right {
+    flex: unset; /* Remove flex sizing */
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 80px; /* Smaller logo for mobile */
+  }
+
+  .logo {
+    font-size: 2rem; /* Smaller font size for the name */
+  }
+
+  /* Navbar adjustments */
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 1.2rem; /* Add spacing between links */
+  }
+
+  .navbar a {
+    font-size: 1.3em; /* Slightly smaller font size */
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  /* Main content adjustments */
+  .main-content {
+    padding: 2rem 1rem; /* Reduce padding for smaller screens */
+  }
+
+  /* Project cards adjustments */
+  .project-card {
+    max-width: 100%; /* Allow cards to take full width */
+    margin: 1rem 0; /* Add spacing between cards */
+  }
+
+  /* Social links adjustments */
+  .social-links {
+    grid-template-columns: 1fr; /* Stack icons in a single column */
+    gap: 1rem; /* Add spacing between icons */
+  }
+
+  .social-button {
+    width: 100%; /* Make buttons take full width */
+    min-width: unset; /* Remove minimum width */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  /* Footer adjustments */
+  .footer {
+    font-size: 0.8rem; /* Smaller font size for footer */
+    padding: 1rem; /* Adjust padding */
+  }
+}
+
+/* Responsive Design for Extra Small Devices */
+@media (max-width: 480px) {
+  /* Header adjustments */
+  .logo-img {
+    height: 90px; /* Even smaller logo for very small screens */
+  }
+
+  /* Make the header smaller */
+  .header {
+    padding: 0rem 0; /* Reduce padding */
+  }
+  .header-container {
+    padding: 0.3rem 0; /* Reduce padding */
+  }
+  .header-left, .header-right {
+    flex: unset; /* Remove flex sizing */
+    text-align: center;
+  }
+  /* Center the header content */
+  .centered-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+    text-align: center;
+    gap: 0.5rem; /* Reduce gap between elements */
+  }
+  .besttn-best{
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  .logo {
+    font-size: 1.5rem; /* Smaller font size for the name */
+  }
+
+  /* Navbar adjustments */
+  .navbar a {
+    font-size: 1rem; /* Smaller font size for links */
+    padding: 0.4rem 0.8rem; /* Adjust padding */
+  }
+
+  /* Project cards adjustments */
+  .project-card {
+    padding: 1rem; /* Reduce padding inside cards */
+  }
+
+  /* Social links adjustments */
+  .social-links {
+    gap: 0.8rem; /* Reduce spacing between icons */
+  }
+
+  .social-button {
+    font-size: 0.8rem; /* Smaller font size for buttons */
+  }
+  .social-links {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Automatically adjust columns */
+    gap: 1.5rem; /* Add spacing between icons */
+    justify-items: center; /* Center icons within their grid cells */
+}
+  .social-links li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .social-links a.linkedin {
+    background-color: #0077b5;
+  }
+  .social-links a.github {
+    background-color: #333;
+  }
+  .social-links a.twitter {
+    background-color: #1da1f2;
+  }
+  .social-links a.email {
+    background-color: #d93025;
+  }
+  .social-links a.tiktok {
+    background-color: #000000;
+  }
+  .social-links a.instagram {
+    background-color: #e1306c;
+  }
+  .social-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  .btn-primary {
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  .skills li{
+    margin: 0.8rem; /* Adjust margin for smaller screens */
+  }
+}
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Automatically adjust columns */
+  gap: 1.5rem; /* Add spacing between icons */
+  justify-items: center; /* Center icons within their grid cells */
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: left;
+}
+.skills li {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  margin: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.skills li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+  .skills li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  .skills li span {
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .skills li:hover span {
+    color: var(--accent);
+  }
+  .skills li:hover img {
+    filter: brightness(0) invert(1);
+  }

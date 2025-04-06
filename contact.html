@@ -8,6 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    @media (max-width: 350px){
+      .social-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width:350){
     .social-links {
       list-style: none;
       padding: 0;
@@ -16,6 +22,8 @@
       gap: 2rem;
       justify-items: center;
     }
+  }
+
     .social-links li {
       display: flex;
       justify-content: center;
@@ -105,7 +113,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Vladuzzul. All rights reserved.</p>
+      <p>&copy; 2025 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
     </div>
   </footer>
 
