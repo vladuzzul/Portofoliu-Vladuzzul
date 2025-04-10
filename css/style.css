@@ -44,15 +44,15 @@
     border-bottom: 1px solid var(--border);
     padding-bottom: 1rem;
     padding-top: 0.2rem;
-    position: relative; /* Header-ul nu mai este sticky */
+    position: relative; 
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    width: 100%; /* Asigură că header-ul ocupă întreaga lățime */
-    max-width: 100%; /* Previne overflow-ul */
-    margin: 0 auto; /* Centrează header-ul */
+    width: 100%; 
+    max-width: 100%; 
+    margin: 0 auto; 
   }
 
-  /* Header container styling */
+  
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -60,9 +60,9 @@
     gap: 1rem;
   }
 
-  /* Left section with logo */
+ 
   .header-left {
-    flex: 1; /* Bigger piece */
+    flex: 1;
     display: flex;
     align-items: center;
   }
@@ -70,7 +70,7 @@
   .logo-img {
     height: 110px;
     max-width: 100%;
-    cursor: pointer; /* Indicate it's clickable */
+    cursor: pointer;
   }
 
   /* Right section with name */
@@ -205,7 +205,7 @@
   
   /* Hamburger menu button */
   .menu-toggle {
-    display: none; /* Ascuns implicit pe ecrane mari */
+    display: none; 
     background: none;
     border: none;
     font-size: 2rem;
