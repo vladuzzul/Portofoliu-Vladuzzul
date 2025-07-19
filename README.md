@@ -10,5 +10,4 @@ This portfolio showcases my projects, skills, and experiences. Feel free to expl
 
 You can check out the live version of my portfolio by clicking the link below:
 [Visit My Portfolio](https://vladuzzul.github.io/Portofoliu-Vladuzzul/)
-s
 Thank you for visiting! 🎉
