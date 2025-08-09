@@ -284,6 +284,17 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 15px rgba(66, 0, 181, 0.3); /* Added glow effect */
 }
 
+.beta-version {
+    padding: 0rem 1.5rem;
+    font-weight: 600;
+    color: #7300ff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: center; /* Center text inside the button */
+    text-decoration-color: #e8e7e7;
+}
+
 .besttn-best:hover {
     background: linear-gradient(145deg, #4200b5, var(--accent)); /* Reverse the gradient on hover */
     transform: translateY(-5px) scale(1.05); /* Slightly larger and lifted */
