@@ -9,9 +9,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <style>
-    @media (max-width: 350px){
+    @media (max-width: 400px){
       .social-links {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-card {
+        max-width: 180px;
+        width: calc(100% - 24px);
+        padding: 18px 12px;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.16);
+      }
+
+      .contact-card h2 {
+        font-size: 0.8rem;
+      }
+
+      .contact-fllw,
+      .contact-link,
+      .contact-socials {
+        font-size: 0.95rem;
+      }
+
+      .contact-link {
+        display: block;
+        margin: 6px 0;
+      }
+
+      .social-icon {
+        font-size: 1.4rem;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 6px;
+        border-radius: 8px;
       }
     }
     @media (min-width:350){
@@ -72,6 +105,97 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
     }
+    .contact-fllw {
+  ccolor: var(--text);
+    transition: color var(--transition), background-color var(--transition);
+    letter-spacing: 1px;
+}
+
+.contact-main {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+  justify-content: center;
+}
+
+.contact-title {
+    font-family: 'Rammetto One', 'Montserrat', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  padding: 40px 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.92) translateY(40px);
+  animation: contactPopUp 0.8s cubic-bezier(.23,1.12,.32,1) 0.3s forwards;
+  margin: 0 auto; /* centers the card horizontally */
+}
+
+@keyframes contactPopUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(40px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    font-size: 1.7rem;
+    color: var(--text);
+    transition: color var(--transition), background-color var(--transition);
+    letter-spacing: 1px;
+}
+
+.contact-link {
+    color: var(--text);
+    transition: color var(--transition), background-color var(--transition);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin: 8px 0;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: var(--accent);
+}
+
+.contact-socials {
+    margin-top: 22px;
+    font-size: 1.1rem;
+}
+
+.social-icon {
+    color: var(--text);
+    transition: color var(--transition), background-color var(--transition);
+    font-size: 1.7rem;
+    margin: 0 10px;
+    transition: color 0.2s, transform 0.2s;
+    vertical-align: middle;
+}
+
+social-icon:hover {
+    color: #181818;
+    transform: scale(1.15);
+}
   </style>
 </head>
 <body>
@@ -97,19 +221,18 @@
   </header>
 
   <main class="main-content fade-in container">
-    <section class="socials-section">
-        <h2 class="hero-title">Ways to Reach Me</h2>
-        <p class="section-text">Feel free to connect with me through any of the platforms below:</p>
-        <br>
-        <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/vlad-cozma-635a28340/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://github.com/vladuzzul" target="_blank" class="github"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://twitter.com/vladuzz208" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="mailto:vladuzz208@icloud.com" class="email"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://www.tiktok.com/@vladuzz208" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a></li>
-            <li><a href="https://www.instagram.com/vladuzz208" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-    </section>
+    <div class="contact-card">
+      <h2 class="contact-title">Cozma Vlad</h2>
+      <p class="contact-fllw">Brasov, Romania</p>
+      <p><a href="tel:+40733870563" class="contact-link"><i class="fa-solid fa-phone"></i> +40 733 870 563</a></p>
+      <p><a href="mailto:vladuzz208@icloud.com" class="contact-link"><i class="fa-solid fa-envelope"></i> vladuzz208@icloud.com</a></p>
+      <div class="contact-socials">
+        <span class="contact-fllw">Contact me on:</span>
+        <a href="https://instagram.com/vladuzzul" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/vladuzzul" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.tiktok.com/@vladuzz208" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
