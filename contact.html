@@ -9,55 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <style>
-    @media (max-width: 400px){
-      .social-links {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .contact-card {
-        max-width: 180px;
-        width: calc(100% - 24px);
-        padding: 18px 12px;
-        border-radius: 14px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.16);
-      }
-
-      .contact-card h2 {
-        font-size: 0.8rem;
-      }
-
-      .contact-fllw,
-      .contact-link,
-      .contact-socials {
-        font-size: 0.95rem;
-      }
-
-      .contact-link {
-        display: block;
-        margin: 6px 0;
-      }
-
-      .social-icon {
-        font-size: 1.4rem;
-        width: 48px;
-        height: 48px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 6px;
-        border-radius: 8px;
-      }
-    }
-    @media (min-width:350){
-    .social-links {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      justify-items: center;
-    }
-  }
-
     .social-links li {
       display: flex;
       justify-content: center;
@@ -106,10 +57,10 @@
       margin-bottom: 2rem;
     }
     .contact-fllw {
-  ccolor: var(--text);
-    transition: color var(--transition), background-color var(--transition);
-    letter-spacing: 1px;
-}
+      color: var(--text);
+      transition: color var(--transition), background-color var(--transition);
+      letter-spacing: 1px;
+    }
 
 .contact-main {
   
@@ -192,10 +143,99 @@
     vertical-align: middle;
 }
 
-social-icon:hover {
+.social-icon:hover {
     color: #181818;
     transform: scale(1.15);
 }
+
+    /* Media queries for responsive design - MUST be at the end */
+    @media (max-width: 768px) {
+      .contact-card {
+        max-width: 350px !important;
+        width: calc(100% - 40px) !important;
+        padding: 32px 24px !important;
+      }
+
+      .contact-title {
+        font-size: 2rem !important;
+      }
+
+      .contact-card h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .contact-fllw,
+      .contact-link,
+      .contact-socials {
+        font-size: 1rem !important;
+      }
+
+      .social-icon {
+        font-size: 1.5rem !important;
+        margin: 0 8px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-card {
+        max-width: 280px !important;
+        width: calc(100% - 32px) !important;
+        padding: 24px 16px !important;
+        border-radius: 16px !important;
+      }
+
+      .contact-title {
+        font-size: 1.6rem !important;
+      }
+
+      .contact-card h2 {
+        font-size: 1.3rem !important;
+      }
+
+      .contact-fllw,
+      .contact-link,
+      .contact-socials {
+        font-size: 0.95rem !important;
+      }
+
+      .contact-link {
+        display: block !important;
+        margin: 6px 0 !important;
+      }
+
+      .social-icon {
+        font-size: 1.4rem !important;
+        margin: 0 6px !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .contact-card {
+        max-width: 240px !important;
+        width: calc(100% - 24px) !important;
+        padding: 20px 12px !important;
+        border-radius: 14px !important;
+      }
+
+      .contact-title {
+        font-size: 1.4rem !important;
+      }
+
+      .contact-card h2 {
+        font-size: 1.1rem !important;
+      }
+
+      .contact-fllw,
+      .contact-link,
+      .contact-socials {
+        font-size: 0.9rem !important;
+      }
+
+      .social-icon {
+        font-size: 1.3rem !important;
+        margin: 0 5px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -230,14 +270,14 @@ social-icon:hover {
         <span class="contact-fllw">Contact me on:</span>
         <a href="https://instagram.com/vladuzzul" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://github.com/vladuzzul" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.tiktok.com/@vladuzz208" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.tiktok.com/@vladuzzul" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
+      <p>&copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
     </div>
   </footer>
 
