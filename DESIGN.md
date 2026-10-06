@@ -76,3 +76,53 @@ These are local lab results, not production measurements. Caching and HTTP compr
 ## Certificate update
 
 The owner-provided AI Engineer certificate supersedes the CV's in-progress course status. About now states graduation and includes a text-only Certifications section with the issuer, 539-hour program scope, issue date (29 July 2026), and a link to the original two-page PDF, copied unchanged into `assets/documents/ai-engineer-vlad-cozma.pdf`. Car Rental System was removed from Projects as requested. AI Deepfake Detection and SafeBuy remain featured.
+
+## Featured project presentations (6 October 2026)
+
+Mode: targeted extension, preserving the portfolio brand. Current tokens are Outfit, purple #7141bd in light mode / #c4a3f2 in dark mode, 16px surfaces and 8px controls. The homepage and Projects remain text-only, honoring the recorded owner preference. Existing filenames, primary navigation, legal footer, and theme behavior are preserved. Two standalone presentation pages were explicitly requested.
+
+Design settings: DESIGN_VARIANCE 6, MOTION_INTENSITY 4, VISUAL_DENSITY 4. Native HTML/CSS remains the foundation. The new stylesheet reuses existing semantic tokens rather than introducing another theme or framework. The layout combines an asymmetric cover, a compact definition list, a narrative overview, a four-part processing flow, an open two-column feature grouping, and native expandable engineering notes. All multi-column content becomes one column below 768px. Sections share one theme; the generated artwork is an image, not a section theme change.
+
+Movie Recommender replaces SafeBuy in both featured placements. SafeBuy retains its description and repository link in the regular project list. Featured titles and Explore project links now open their local presentation; the source repositories remain available through View code. The two presentations have unique titles, descriptions, canonical URLs, and Open Graph images, plus README and cross-project navigation.
+
+Sources read on 6 October 2026:
+
+- https://raw.githubusercontent.com/vladuzzul/Movie-Recommender/main/README.md
+- https://raw.githubusercontent.com/vladuzzul/Deepfake-Detection/main/README.md
+
+Movie Recommender copy distinguishes genre-based TF-IDF/cosine ranking from semantic embedding or collaborative-filtering systems. Deepfake Detection is identified as an AI Engineer course project; availability tests are not described as accuracy tests, and the README's original dataset and notebook are credited. No invented accuracy, adoption, or performance claims were added.
+
+### New artwork provenance
+
+Generated using the built-in image-generation tool. These are conceptual illustrations, not screenshots or model outputs. Each carries a visible AI-generated illustration caption. Optimized local WebP variants use explicit dimensions, responsive srcset, and high fetch priority. The movie variants are approximately 26/58 KB and the deepfake variants approximately 15/35 KB.
+
+Movie cover: assets/images/movie-recommender-{720,1200}.webp
+
+Prompt:
+
+> Use case: stylized-concept. Asset type: conceptual cover artwork for Movie Recommender, a developer portfolio case study. Create a refined photographic 3D still life of a brushed aluminum film reel with a short translucent muted violet film strip gently curling forward across a cool pale-gray studio surface. A few film frames catch soft light. Tangible realistic materials, architectural clean composition, directional studio light, elegant restrained detail. Landscape 3:2 framing, entire reel visible with space around, off-white and silver with only a muted violet accent. No people, no text, no logos, no UI, no watermarks, no glowing neon. This is conceptual cinema artwork, not an application screenshot. Save the final image as a local file.
+
+Deepfake cover: assets/images/deepfake-detection-{720,1200}.webp
+
+Prompt:
+
+> Use case: stylized-concept. Asset type: conceptual cover artwork for AI Deepfake Detection, a developer portfolio case study. Create a refined photographic 3D studio still life of two sculptural human face masks standing upright side by side: one smooth matte porcelain gray face, one matching face constructed of small precise brushed aluminum geometric facets. A thin translucent muted violet glass sheet sits between them. Abstract anonymous sculptures, clearly not real people. Cool pale-gray studio background, soft directional light, subtle material shadows, sophisticated restrained composition. Landscape 3:2 framing with complete masks visible and breathing room. Off-white and silver with only muted violet accent. No text, no logos, no UI, no classification markers, no arrows, no neon, no watermark. Conceptual illustration only, not evidence of model performance. Save the final image as a local file.
+
+### Project presentation preflight
+
+One hero eyebrow per page, one accent family, consistent corners, two-line desktop titles, readable non-wrapping CTAs, no decorative counters or invented metrics, and no em/en dashes in public HTML. Artwork stays out of the main project listing and homepage. The existing entrance/reveal effects communicate reading order and honor reduced motion. All disclosures, local links, and source links work without JavaScript; only the existing theme/menu enhancements use it. There are no new asynchronous data-loading states.
+
+### Validation of the project pages
+
+Both new pages were checked in the in-app browser in light and dark themes. Responsive checks covered 320px, 390px, 1024px, and 1280px widths with no horizontal overflow in the checked layouts. Confirmed the homepage and Projects entry points, SafeBuy's regular-list placement, cross-project navigation, return anchor, the How it works link, keyboard-operated disclosures, theme changes, and mobile menu Escape behavior.
+
+A static audit passed for all six pages: one primary heading each, unique IDs, valid local assets, existing local link destinations and fragment targets, and no em/en dashes. New motion uses the existing reduced-motion media guards. Formatting and git diff whitespace checks passed.
+
+Local mobile Lighthouse results (6 October 2026):
+
+| Page                  | Performance | Accessibility | Best practices | SEO | LCP   | CLS | TBT  |
+| --------------------- | ----------- | ------------- | -------------- | --- | ----- | --- | ---- |
+| Movie Recommender     | 99          | 100           | 100            | 100 | 2.1 s | 0   | 0 ms |
+| AI Deepfake Detection | 99          | 100           | 100            | 100 | 2.0 s | 0   | 0 ms |
+
+A follow-up accessibility audit after aligning the new pages' home-link accessible name with the visible wordmark remained at 100; the label-match check passed. Shared existing pages were not otherwise redesigned. These are local lab measurements; hosting compression and caching affect production performance. No production INP measurement or deployment was performed.

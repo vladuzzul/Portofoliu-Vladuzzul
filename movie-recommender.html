@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommender | Vlad Cozma</title>
+    <meta
+      name="description"
+      content="An account-free movie recommendation app using MovieLens, TF-IDF genre vectors, cosine similarity, and FastAPI."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="canonical"
+      href="https://vladuzzul.github.io/Portofoliu-Vladuzzul/movie-recommender.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Movie Recommender | Vlad Cozma" />
+    <meta
+      property="og:description"
+      content="An account-free movie recommendation app using MovieLens, TF-IDF genre vectors, cosine similarity, and FastAPI."
+    />
+    <meta
+      property="og:url"
+      content="https://vladuzzul.github.io/Portofoliu-Vladuzzul/movie-recommender.html"
+    />
+    <meta
+      property="og:image"
+      content="https://vladuzzul.github.io/Portofoliu-Vladuzzul/assets/images/movie-recommender-1200.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="A silver film reel with a translucent violet film strip on a gray studio surface."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="js/theme.js"></script>
+    <link
+      rel="preload"
+      href="assets/fonts/outfit-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css?v=8" />
+    <link rel="stylesheet" href="css/project-details.css?v=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="js/script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+      <div class="container header-container">
+        <a class="brand" href="index.html" aria-label="Vlad Cozma home">
+          <span class="logo">Vlad Cozma</span>
+        </a>
+        <nav class="navbar" id="navigation" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">About</a></li>
+            <li>
+              <a
+                href="projects.html"
+                aria-current="location"
+                class="nav-section"
+                >Projects</a
+              >
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          id="darkModeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
+            >◐</span
+          ><span data-theme-label>Dark</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+    <main id="main-content" class="container case-page" tabindex="-1">
+      <a class="text-link back-link" href="projects.html#featured-projects"
+        ><span aria-hidden="true">←</span> All projects</a
+      >
+      <section class="case-hero" aria-labelledby="project-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Recommender systems</p>
+          <h1 id="project-title">Movie Recommender</h1>
+          <p class="case-intro">
+            Find your next film through the movies you already know and the
+            genres you enjoy.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/vladuzzul/Movie-Recommender"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View code <span class="arrow" aria-hidden="true">↗</span></a
+            >
+            <a class="text-link" href="#how-it-works"
+              >How it works <span class="arrow" aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <figure class="case-art">
+          <img
+            src="assets/images/movie-recommender-1200.webp"
+            srcset="
+              assets/images/movie-recommender-720.webp   720w,
+              assets/images/movie-recommender-1200.webp 1200w
+            "
+            sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) 42vw, 520px"
+            width="1200"
+            height="800"
+            fetchpriority="high"
+            alt="A silver film reel with a translucent violet film strip on a gray studio surface."
+          />
+        </figure>
+      </section>
+      <dl class="case-facts" aria-label="Project at a glance">
+        <div>
+          <dt>Approach</dt>
+          <dd>Content-based filtering</dd>
+        </div>
+        <div>
+          <dt>Data</dt>
+          <dd>MovieLens catalog</dd>
+        </div>
+        <div>
+          <dt>Interface</dt>
+          <dd>FastAPI + vanilla JavaScript</dd>
+        </div>
+      </dl>
+      <section
+        class="case-overview section reveal"
+        aria-labelledby="overview-title"
+      >
+        <div class="case-prose">
+          <h2 id="overview-title">A starting point for movie discovery.</h2>
+          <p>
+            Choosing what to watch starts with a few familiar films. Search the
+            local MovieLens catalog, rate reference movies from one to five, and
+            get a ranked list of suggestions.
+          </p>
+          <p>
+            The app connects a Python recommendation engine to a framework-free
+            web interface. No account or external movie service is required.
+          </p>
+        </div>
+        <aside class="case-callout">
+          <h3>Recommendations you can inspect</h3>
+          <p>
+            Each result includes its genres, audience average, rating count, and
+            the reference films that contributed to the suggestion.
+          </p>
+        </aside>
+      </section>
+      <section
+        class="case-method section reveal"
+        id="how-it-works"
+        aria-labelledby="method-title"
+      >
+        <div class="section-heading">
+          <h2 id="method-title">From movie genres to a ranked list.</h2>
+          <p>
+            The engine compares genre profiles, then combines similarity with
+            your ratings and audience response.
+          </p>
+        </div>
+        <ol class="method-flow">
+          <li>
+            <h3>Prepare the catalog</h3>
+            <p>
+              Parse valid title years, clean genre labels, and normalize the
+              source ratings.
+            </p>
+          </li>
+          <li>
+            <h3>Vectorize genres</h3>
+            <p>
+              TF-IDF turns genre text into numerical vectors that describe each
+              movie.
+            </p>
+          </li>
+          <li>
+            <h3>Find related films</h3>
+            <p>
+              Cosine similarity finds movies with genre profiles close to your
+              reference films.
+            </p>
+          </li>
+          <li>
+            <h3>Rank candidates</h3>
+            <p>
+              Combine reference ratings, audience ratings, and similarity
+              position to order the results.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="section reveal" aria-labelledby="features-title">
+        <div class="section-heading">
+          <h2 id="features-title">A small, complete browsing experience.</h2>
+        </div>
+        <div class="case-features">
+          <div class="case-feature">
+            <h3>Search and rate</h3>
+            <p>
+              Debounced title search, paginated results, and native radio-based
+              star ratings keep a large catalog manageable.
+            </p>
+          </div>
+          <div class="case-feature">
+            <h3>Keep your selections</h3>
+            <p>
+              Ratings persist in browser local storage, so you can return to
+              your selection without creating an account.
+            </p>
+          </div>
+          <div class="case-feature">
+            <h3>Understand each suggestion</h3>
+            <p>
+              The results connect recommendations to the films you rated and
+              show the audience rating alongside its sample size.
+            </p>
+          </div>
+          <div class="case-feature">
+            <h3>Handle the in-between states</h3>
+            <p>
+              Loading skeletons, error recovery, live status messages, keyboard
+              focus, and reduced-motion support are part of the frontend.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="case-engineering section reveal"
+        aria-labelledby="engineering-title"
+      >
+        <div class="section-heading">
+          <h2 id="engineering-title">Engineering notes</h2>
+          <p>
+            The implementation choices, delivery workflow, and limits behind the
+            project.
+          </p>
+        </div>
+        <ul class="case-stack" aria-label="Technologies used">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>pandas</li>
+          <li>scikit-learn</li>
+          <li>TF-IDF</li>
+          <li>JavaScript</li>
+          <li>Docker</li>
+        </ul>
+        <div class="case-details">
+          <details open>
+            <summary>Ranking choices</summary>
+            <div class="detail-body">
+              <p>
+                Catalog browsing uses a Bayesian weighted rating so a single
+                perfect review cannot outrank films with a stronger audience
+                history. Search prioritizes exact title matches, then prefix
+                matches, then substring matches.
+              </p>
+              <p>
+                The recommendation score is an internal ranking value. It is not
+                shown as a confidence percentage.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Backend and delivery</summary>
+            <div class="detail-body">
+              <p>
+                FastAPI exposes catalog search, recommendations, and a health
+                endpoint. Runtime dependencies are FastAPI, Uvicorn, pandas, and
+                scikit-learn.
+              </p>
+              <p>
+                Docker packages the processed datasets and frontend, runs as an
+                unprivileged user, and checks application health. CI tests
+                Python and JavaScript, checks generated data, and smoke-tests
+                the container before publishing on pushes to main.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Testing and current limits</summary>
+            <div class="detail-body">
+              <p>
+                The test suite covers routes, frontend assets, API fields,
+                pagination, search ordering, weighted ratings, recommendations,
+                title parsing, and the TF-IDF model.
+              </p>
+              <p>
+                Recommendations use genre text only, without plots, cast,
+                directors, or semantic embeddings. Ratings stay in the current
+                browser and do not sync across devices. The catalog has no
+                poster provider, and the product is English-only.
+              </p>
+            </div>
+          </details>
+        </div>
+        <div class="case-source">
+          <p>This overview is based on the project README.</p>
+          <a
+            class="text-link"
+            href="https://github.com/vladuzzul/Movie-Recommender#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Read the README <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <nav class="next-project" aria-label="Another featured project">
+        <div>
+          <p>Another featured project</p>
+          <a href="deepfake-detection.html"
+            >AI Deepfake Detection
+            <span class="arrow" aria-hidden="true">→</span></a
+          >
+          <p>
+            Explore an image classifier, its training workflow, and the API that
+            serves it.
+          </p>
+        </div>
+      </nav>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/vladuzzul"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+          ><a href="mailto:vladuzz208@icloud.com"
+            >Email <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
