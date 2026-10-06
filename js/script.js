@@ -1,46 +1,122 @@
 /* Progressive enhancements: every page and link works without JavaScript. */
 const root = document.documentElement;
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-const themeButton = document.getElementById("darkModeToggle");
+const settingsButton = document.getElementById("settingsToggle");
+const accents = ["purple", "lime", "yellow", "blue", "teal", "rose"];
 
-function updateThemeButton() {
-  const dark =
-    root.dataset.theme === "dark" ||
-    (!root.dataset.theme && systemTheme.matches);
-  themeButton?.setAttribute(
-    "aria-label",
-    `Switch to ${dark ? "light" : "dark"} mode`,
-  );
-  if (themeButton) {
-    themeButton.querySelector("[data-theme-label]").textContent = dark
-      ? "Light"
-      : "Dark";
-    themeButton.querySelector("[data-theme-symbol]").textContent = dark
-      ? "☼"
-      : "◐";
-  }
+// One shared panel keeps the settings identical across all six static pages.
+const settingsPanel = document.createElement("section");
+settingsPanel.id = "appearanceSettings";
+settingsPanel.className = "settings-panel";
+settingsPanel.hidden = true;
+settingsPanel.setAttribute("role", "dialog");
+settingsPanel.setAttribute("aria-labelledby", "settingsTitle");
+settingsPanel.innerHTML = `
+  <div class="settings-heading">
+    <h2 id="settingsTitle">Appearance</h2>
+    <button class="settings-close" type="button" aria-label="Close settings">×</button>
+  </div>
+  <fieldset class="settings-group">
+    <legend>Theme</legend>
+    <div class="theme-options">
+      ${["light", "dark", "system"].map((theme) => `
+        <label class="settings-option">
+          <input type="radio" name="theme" value="${theme}">
+          <span>${theme[0].toUpperCase() + theme.slice(1)}</span>
+        </label>`).join("")}
+    </div>
+    <p class="settings-hint">System follows your device’s appearance.</p>
+  </fieldset>
+  <fieldset class="settings-group">
+    <legend>Accent color</legend>
+    <div class="accent-options">
+      ${accents.map((accent) => `
+        <label class="settings-option accent-option" data-accent="${accent}">
+          <input type="radio" name="accent" value="${accent}">
+          <span><i class="accent-swatch" aria-hidden="true"></i>${accent[0].toUpperCase() + accent.slice(1)}</span>
+        </label>`).join("")}
+    </div>
+  </fieldset>
+  <p class="settings-hint">Changes apply instantly</p>
+`;
+settingsButton?.after(settingsPanel);
+
+function updateSettings() {
+  settingsPanel.querySelectorAll("input").forEach((input) => {
+    const selected =
+      input.name === "theme"
+        ? root.dataset.theme || "system"
+        : root.dataset.accent || "purple";
+    input.checked = input.value === selected;
+  });
 }
-themeButton?.addEventListener("click", () => {
-  const dark =
-    root.dataset.theme === "dark" ||
-    (!root.dataset.theme && systemTheme.matches);
-  root.dataset.theme = dark ? "light" : "dark";
-  try {
-    localStorage.setItem("theme", root.dataset.theme);
-  } catch {
-    /* Storage is optional. */
+function closeSettings(restoreFocus = false) {
+  settingsPanel.hidden = true;
+  settingsButton?.setAttribute("aria-expanded", "false");
+  if (restoreFocus) settingsButton?.focus();
+}
+settingsButton?.addEventListener("click", () => {
+  if (!settingsPanel.hidden) {
+    closeSettings(true);
+    return;
   }
-  updateThemeButton();
+  closeMenu();
+  settingsPanel.hidden = false;
+  settingsButton.setAttribute("aria-expanded", "true");
+  settingsPanel.querySelector('input[name="theme"]:checked').focus();
 });
-systemTheme.addEventListener("change", updateThemeButton);
+settingsPanel
+  .querySelector(".settings-close")
+  .addEventListener("click", () => closeSettings(true));
+settingsPanel.addEventListener("change", (event) => {
+  const { name, value } = event.target;
+  if (name === "theme") {
+    // No override lets the CSS media query react to OS changes immediately.
+    if (value === "system") delete root.dataset.theme;
+    else root.dataset.theme = value;
+  } else if (name === "accent") {
+    root.dataset.accent = value;
+  } else return;
+  try {
+    localStorage.setItem(name, value);
+  } catch {
+    // Settings still work for this page when storage is unavailable.
+  }
+  updateSettings();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !settingsPanel.hidden) {
+    event.preventDefault();
+    closeSettings(true);
+  }
+});
+document.addEventListener("click", (event) => {
+  if (
+    !settingsPanel.contains(event.target) &&
+    !settingsButton?.contains(event.target)
+  ) {
+    closeSettings();
+  }
+});
+// This is a non-modal panel: Tab can leave it without trapping the visitor.
+document.addEventListener("focusin", (event) => {
+  if (!settingsPanel.contains(event.target) && event.target !== settingsButton) {
+    closeSettings();
+  }
+});
 window.addEventListener("storage", (event) => {
-  if (event.key !== "theme") return;
-  if (event.newValue === "light" || event.newValue === "dark")
-    root.dataset.theme = event.newValue;
-  else delete root.dataset.theme;
-  updateThemeButton();
+  if (event.key === "theme" || event.key === null) {
+    if (event.newValue === "light" || event.newValue === "dark")
+      root.dataset.theme = event.newValue;
+    else delete root.dataset.theme;
+  }
+  if (event.key === "accent" || event.key === null) {
+    if (accents.includes(event.newValue))
+      root.dataset.accent = event.newValue;
+    else delete root.dataset.accent;
+  }
+  updateSettings();
 });
-updateThemeButton();
+updateSettings();
 
 const menuButton = document.getElementById("menuToggle");
 const navigation = document.getElementById("navigation");

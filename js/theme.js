@@ -5,6 +5,10 @@ try {
   if (savedTheme === "dark" || savedTheme === "light") {
     document.documentElement.dataset.theme = savedTheme;
   }
+  const savedAccent = localStorage.getItem("accent");
+  if (["purple", "lime", "yellow", "blue", "teal", "rose"].includes(savedAccent)) {
+    document.documentElement.dataset.accent = savedAccent;
+  }
 } catch {
   /* CSS follows the system preference if storage is unavailable. */
 }

@@ -26,7 +26,7 @@
       content="Silver code brackets with a violet slash, original portfolio artwork."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <script src="js/theme.js"></script>
+    <script src="js/theme.js?v=2"></script>
     <link
       rel="preload"
       href="assets/fonts/outfit-variable.ttf"
@@ -34,9 +34,9 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="css/style.css?v=9" />
+    <link rel="stylesheet" href="css/style.css?v=11" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script src="js/script.js?v=2" defer></script>
+    <script src="js/script.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -53,14 +53,16 @@
           </ul>
         </nav>
         <button
-          id="darkModeToggle"
-          class="theme-toggle"
+          id="settingsToggle"
+          class="settings-toggle"
           type="button"
-          aria-label="Switch to dark mode"
+          aria-label="Settings"
+          title="Settings"
+          aria-haspopup="dialog"
+          aria-controls="appearanceSettings"
+          aria-expanded="false"
         >
-          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
-            >◐</span
-          ><span data-theme-label>Dark</span>
+          <span class="settings-icon" aria-hidden="true">&#9881;&#65038;</span>
         </button>
         <button
           id="menuToggle"

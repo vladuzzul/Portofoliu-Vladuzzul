@@ -24,15 +24,15 @@ Open <http://127.0.0.1:4173>. Stop the server with Ctrl+C. The same files can be
 | `about.html`              | Biography, competition achievements, and grouped technical skills                |
 | `contact.html`            | Email, phone, location, and social profiles                                      |
 | `css/style.css`           | Shared colors, typography, component styles, motion, and breakpoints             |
-| `js/theme.js`             | Reads the saved theme before the stylesheet loads                                |
-| `js/script.js`            | Theme toggle, mobile menu, email copying, and section reveals                    |
+| `js/theme.js`             | Restores theme and accent before the stylesheet loads                                |
+| `js/script.js`            | Appearance panel, mobile menu, email copying, and section reveals                    |
 | `assets/images/`          | Optimized local artwork and a small copy of the original logo                    |
 | `assets/fonts/`           | Self-hosted Outfit variable font and its SIL Open Font License                   |
 | `DESIGN.md`               | Design decisions, original-site audit, and artwork provenance                    |
 
 ## Adjust the design
 
-Start with the custom properties in `:root` at the top of `css/style.css`. For example, `--accent` controls the purple used for important actions and headings, and `--bg` controls the page background. There are matching dark-theme values in both the system-preference media query and the manual `[data-theme="dark"]` rule. Keep those two dark token sets synchronized.
+Start with the custom properties in `:root` at the top of `css/style.css`. For example, `--accent` controls the selected color used for important actions and headings, and `--bg` controls the page background. There are matching dark-theme values in both the system-preference media query and the manual `[data-theme="dark"]` rule. Keep those two dark token sets synchronized.
 
 The layout uses CSS Grid on desktop and switches to one column below 768px. Containers have explicit side margins so content cannot touch the viewport edges. Surfaces use 16px corners, buttons use 8px corners, and small project tags use fully rounded corners.
 
@@ -41,7 +41,10 @@ The header and footer are intentionally ordinary HTML in each page. When updatin
 ## Theme and accessibility behavior
 
 - Without a saved preference, the entire site follows the device's light/dark setting.
-- The theme button stores a preference in `localStorage`; existing `theme` preferences continue to work. Clear that key to follow the system again.
+- The Settings button opens the shared Appearance panel with Light, Dark, and System choices. System is the default; choosing it removes the explicit CSS theme override so device changes apply live. Existing saved Light/Dark preferences are preserved.
+- Accent presets are Purple (default), Lime, Yellow, Blue, Teal, and Rose. Each has light/dark foreground, hover, tint, and button-text values in `css/style.css`; shared semantic variables recolor the site.
+- Theme and accent selections apply immediately and persist through `localStorage` (`theme` and `accent`). `js/theme.js` restores them before CSS loads to avoid a flash; `js/script.js` creates the panel once per page and synchronizes other tabs.
+- The panel uses native radio inputs with keyboard navigation. Escape and the close button restore focus to Settings; clicking or tabbing outside dismisses it.
 - Storage errors are caught, so private browsing does not break the page.
 - The mobile menu exposes its open state through `aria-expanded`, supports Escape, and restores focus to the menu button.
 - Every page includes a skip link, one primary heading, and visible keyboard focus.

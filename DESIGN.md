@@ -126,3 +126,30 @@ Local mobile Lighthouse results (6 October 2026):
 | AI Deepfake Detection | 99          | 100           | 100            | 100 | 2.0 s | 0   | 0 ms |
 
 A follow-up accessibility audit after aligning the new pages' home-link accessible name with the visible wordmark remained at 100; the label-match check passed. Shared existing pages were not otherwise redesigned. These are local lab measurements; hosting compression and caching affect production performance. No production INP measurement or deployment was performed.
+
+
+## Appearance settings (6 October 2026)
+
+The header theme toggle is now a Settings button on all six pages. Its anchored,
+non-modal panel retains the existing Outfit font, neutral surfaces, 16px panel
+corners, and 8px controls. Theme choices are Light, Dark, and System (default).
+Purple remains the default accent; Lime, Yellow, Blue, Teal, and Rose offer
+alternatives with separate light/dark palettes. Bright swatches identify each
+color, while darker light-mode accent text preserves readability.
+
+The shared script generates one panel per page. Native radio groups provide
+arrow-key navigation, explicit labels, checked states, and visible focus. Escape
+and the close button restore focus; clicking or tabbing outside dismisses the
+panel. Opening settings closes mobile navigation. Selections apply immediately,
+restore before CSS loads, and synchronize between tabs using storage events.
+System removes the explicit theme override, leaving the existing CSS media query
+to follow device appearance. No new dependencies or build step were introduced.
+
+Validation: all six pages opened the panel with saved selections; all six presets
+were checked in light and dark mode. Reload/navigation persistence, System's
+removed override, arrow-key selection, Escape/close focus restoration, and mobile
+menu interaction passed. The 320px mobile panel fit without horizontal overflow.
+All palette text pairs (accent on page/surfaces/tint, button text on accent/hover)
+passed 4.5:1 contrast, with a minimum of 4.51:1. Startup checks passed for empty,
+System, saved, invalid, and blocked storage. JavaScript syntax and diff whitespace
+checks passed. Live OS switching was not simulated; System uses CSS media queries.
