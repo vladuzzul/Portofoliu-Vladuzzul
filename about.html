@@ -1,78 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Page</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Vlad Cozma | Vladuzzul</title>
+    <meta
+      name="description"
+      content="Meet Vlad Cozma, a software developer from Brasov, Romania, interested in machine learning, problem-solving, and robotics."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://www.vladuzzul.xyz/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About | Vlad Cozma | Vladuzzul" />
+    <meta
+      property="og:description"
+      content="Meet Vlad Cozma, a software developer from Brasov, Romania, interested in machine learning, problem-solving, and robotics."
+    />
+    <meta property="og:url" content="https://www.vladuzzul.xyz/about.html" />
+    <meta
+      property="og:image"
+      content="https://www.vladuzzul.xyz/assets/images/code-sculpture-1200.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Silver code brackets with a violet slash, original portfolio artwork."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="js/theme.js"></script>
+    <link
+      rel="preload"
+      href="assets/fonts/outfit-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css?v=9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="js/script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
-    <div class="container header-container">
-      <!-- Left section with logo (now a home button) -->
-      <div class="header-left">
-        <a href="index.html">
-          <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
+      <div class="container header-container">
+        <a class="brand" href="index.html" aria-label="Vladuzzul home">
+          <img
+            src="assets/images/vladuzzul-logo.webp"
+            alt=""
+            class="logo-img"
+            width="50"
+            height="50"
+          />
+          <span class="logo">Vladuzzul</span>
         </a>
+        <nav class="navbar" id="navigation" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          id="darkModeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
+            >◐</span
+          ><span data-theme-label>Dark</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
       </div>
-      <!-- Right section with name -->
-      <div class="header-right">
-        <h1 class="logo">Vladuzzul</h1>
+    </header>
+    <main id="main-content" class="container" tabindex="-1">
+      <section class="page-intro">
+        <h1>About Me</h1>
+        <p>
+          Curious about how things work. Even more curious about building them.
+        </p>
+      </section>
+      <div class="about-layout">
+        <section class="prose" aria-label="My background">
+          <p>
+            Hi! My name is Vlad Cozma, and I am a passionate software developer.
+            I have a strong interest in problem-solving and I’m currently
+            expanding my software development skills.
+          </p>
+          <p>
+            I come from Brasov, Romania, and study at Colegiul Național de
+            Informatică “Gr. Moisil”, working toward a career as a software
+            developer.
+          </p>
+          <p>
+            I graduated from the AI Engineer course at Software Development
+            Academy, covering Python, data processing, machine learning, deep
+            learning, and deploying AI systems.
+          </p>
+          <p>
+            In my free time, I enjoy learning new programming languages and
+            frameworks, as well as working on personal projects that challenge
+            my skills and creativity.
+          </p>
+          <p>
+            I have participated in informatics and robotics competitions, where
+            I learned a lot about teamwork and problem-solving.
+          </p>
+        </section>
+        <aside class="achievements" aria-label="Competition achievements">
+          <article class="achievement reveal">
+            <strong>3rd place</strong>
+            <h2>InfoTRON 2026</h2>
+            <p>
+              ESP32 category, with StratoX: a motor-powered cardboard aircraft
+              that collected weather data in flight for hard-to-reach areas.
+            </p>
+          </article>
+          <article class="achievement reveal">
+            <strong>2nd place</strong>
+            <h2>World Robotics Olympiad</h2>
+            <p>
+              Romania, 2023, Future Innovators category. I went on to
+              participate in the international competition in Denmark.
+            </p>
+          </article>
+        </aside>
       </div>
-    </div>
-    <!-- Buttons section -->
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content fade-in container">
-    <section class="about">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-text">
-        Hi! My name is Vlad Cozma, and I am a passionate software developer. I have a strong interest in problem-solving programming and I'm currently trying to expand my skills in software developing.
-      </p>
-      <p class="section-text">
-        I come from Brasov, Romania, and I am currently in 9th grade trying to start my career as a software developer.
-      </p>
-      <p class="section-text">
-        In my free time, I enjoy learning new programming languages and frameworks, as well as working on personal projects that challenge my skills and creativity.
-      </p>
-      <p class="section-text">
-        In my past, I participated in informatics and robotics competitions, where I learned a lot about teamwork and problem-solving. At the World Robotics Olympiad I won the 2nd place at the national-level in 2023, and went to Denmark for the international-level competition.
-      </p>
-    </section>
-    <br>
-    <section class="skills">
-      <h2 class="section-title">Skills</h2>
-      <br>
-      <ul class="skills-list">
-        <li>C++ - Advanced</li>
-        <li>Arduino, Python - Intermediate</li>
-        <li>HTML, CSS, JavaScript - Beginner</li>
-      </ul>
-    </section>
-    <br>
-    <br>
-    <p class="section-text">
-        The site might not be the best, but I promise, my problem-solving skills are way better than my web development ones :)
-    </p>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+      <section
+        class="section"
+        id="certifications"
+        aria-labelledby="certifications-title"
+      >
+        <h2 id="certifications-title">Certifications</h2>
+        <article class="certificate-row reveal">
+          <div>
+            <h3>AI Engineer</h3>
+            <p class="certificate-issuer">Software Development Academy</p>
+            <p>
+              A 539-hour program in Python, data processing, machine learning,
+              deep learning, and AI deployment.
+            </p>
+            <p class="certificate-date">
+              Issued <time datetime="2026-07-29">29 July 2026</time>
+            </p>
+          </div>
+          <a
+            href="assets/documents/ai-engineer-vlad-cozma.pdf"
+            class="button button-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            type="application/pdf"
+            >View certificate (PDF)
+            <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </article>
+      </section>
+      <section class="section skills-section" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-group reveal">
+            <h3>Machine learning</h3>
+            <p>Neural networks, supervised and unsupervised learning.</p>
+            <p>TensorFlow, PyTorch, Keras, and scikit-learn.</p>
+          </article>
+          <article class="skill-group reveal">
+            <h3>Python &amp; data</h3>
+            <p>
+              Object-oriented programming, data structures, scripting, data
+              cleaning, preprocessing, analysis, and visualization.
+            </p>
+            <p>NumPy, pandas, Matplotlib, and Seaborn.</p>
+          </article>
+          <article class="skill-group reveal">
+            <h3>Training &amp; deployment</h3>
+            <p>
+              Model fine-tuning and experiment tracking with MLflow. FastAPI for
+              serving image predictions.
+            </p>
+            <p>Familiar with Docker and CI/CD workflows.</p>
+          </article>
+          <article class="skill-group reveal">
+            <h3>C++</h3>
+            <p>Advanced</p>
+          </article>
+          <article class="skill-group reveal">
+            <h3>Embedded programming</h3>
+            <p>
+              Arduino and ESP8266 microcontrollers, with ESP32 experience
+              through StratoX.
+            </p>
+          </article>
+          <article class="skill-group reveal">
+            <h3>HTML, CSS &amp; JavaScript</h3>
+            <p>Beginner</p>
+          </article>
+        </div>
+        <p class="personal-note">
+          The site might not be the best, but I promise, my problem-solving
+          skills are way better than my web development ones :)
+        </p>
+      </section>
+      <section class="contact-band reveal" aria-labelledby="contact-heading">
+        <div>
+          <h2 id="contact-heading">Have something in mind?</h2>
+          <p>Let’s talk about code, projects, or an idea.</p>
+        </div>
+        <a href="contact.html" class="button button-primary"
+          >Contact <span class="arrow" aria-hidden="true">→</span></a
+        >
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/vladuzzul"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+          ><a href="mailto:vladuzz208@icloud.com"
+            >Email <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,286 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Page</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-  <style>
-    .social-links li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .social-links a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 2.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .social-links a.linkedin {
-      background-color: #0077b5;
-    }
-    .social-links a.github {
-      background-color: #333;
-    }
-    .social-links a.twitter {
-      background-color: #1da1f2;
-    }
-    .social-links a.email {
-      background-color: #d93025;
-    }
-    .social-links a.tiktok {
-      background-color: #000000;
-    }
-    .social-links a.instagram {
-      background-color: #e1306c;
-    }
-    .social-links a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-    .hero-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .section-text {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .contact-fllw {
-      color: var(--text);
-      transition: color var(--transition), background-color var(--transition);
-      letter-spacing: 1px;
-    }
-
-.contact-main {
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 70vh;
-  justify-content: center;
-}
-
-.contact-title {
-    font-family: 'Rammetto One', 'Montserrat', Arial, sans-serif;
-    font-size: 2.5rem;
-    color: var(--accent);
-    letter-spacing: 2px;
-}
-
-.contact-card {
-  background: var(--card-bg);
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-  padding: 40px 32px;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.92) translateY(40px);
-  animation: contactPopUp 0.8s cubic-bezier(.23,1.12,.32,1) 0.3s forwards;
-  margin: 0 auto; /* centers the card horizontally */
-}
-
-@keyframes contactPopUp {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(40px);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.04) translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.contact-card h2 {
-    margin-top: 0;
-    font-size: 1.7rem;
-    color: var(--text);
-    transition: color var(--transition), background-color var(--transition);
-    letter-spacing: 1px;
-}
-
-.contact-link {
-    color: var(--text);
-    transition: color var(--transition), background-color var(--transition);
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: inline-block;
-    margin: 8px 0;
-    transition: color 0.2s;
-}
-
-.contact-link:hover {
-    color: var(--accent);
-}
-
-.contact-socials {
-    margin-top: 22px;
-    font-size: 1.1rem;
-}
-
-.social-icon {
-    color: var(--text);
-    transition: color var(--transition), background-color var(--transition);
-    font-size: 1.7rem;
-    margin: 0 10px;
-    transition: color 0.2s, transform 0.2s;
-    vertical-align: middle;
-}
-
-.social-icon:hover {
-    color: var(--accent);
-    transform: scale(1.15);
-}
-
-    /* Media queries for responsive design - MUST be at the end */
-    @media (max-width: 768px) {
-      .contact-card {
-        max-width: 350px !important;
-        width: calc(100% - 40px) !important;
-        padding: 32px 24px !important;
-      }
-
-      .contact-title {
-        font-size: 2rem !important;
-      }
-
-      .contact-card h2 {
-        font-size: 1.5rem !important;
-      }
-
-      .contact-fllw,
-      .contact-link,
-      .contact-socials {
-        font-size: 1rem !important;
-      }
-
-      .social-icon {
-        font-size: 1.5rem !important;
-        margin: 0 8px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-card {
-        max-width: 280px !important;
-        width: calc(100% - 32px) !important;
-        padding: 24px 16px !important;
-        border-radius: 16px !important;
-      }
-
-      .contact-title {
-        font-size: 1.6rem !important;
-      }
-
-      .contact-card h2 {
-        font-size: 1.3rem !important;
-      }
-
-      .contact-fllw,
-      .contact-link,
-      .contact-socials {
-        font-size: 0.95rem !important;
-      }
-
-      .contact-link {
-        display: block !important;
-        margin: 6px 0 !important;
-      }
-
-      .social-icon {
-        font-size: 1.4rem !important;
-        margin: 0 6px !important;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .contact-card {
-        max-width: 240px !important;
-        width: calc(100% - 24px) !important;
-        padding: 20px 12px !important;
-        border-radius: 14px !important;
-      }
-
-      .contact-title {
-        font-size: 1.4rem !important;
-      }
-
-      .contact-card h2 {
-        font-size: 1.1rem !important;
-      }
-
-      .contact-fllw,
-      .contact-link,
-      .contact-socials {
-        font-size: 0.9rem !important;
-      }
-
-      .social-icon {
-        font-size: 1.3rem !important;
-        margin: 0 5px !important;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Vlad Cozma | Vladuzzul</title>
+    <meta
+      name="description"
+      content="Get in touch with Vlad Cozma by email or phone, or connect on GitHub, Instagram, and TikTok."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://www.vladuzzul.xyz/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact | Vlad Cozma | Vladuzzul" />
+    <meta
+      property="og:description"
+      content="Get in touch with Vlad Cozma by email or phone, or connect on GitHub, Instagram, and TikTok."
+    />
+    <meta property="og:url" content="https://www.vladuzzul.xyz/contact.html" />
+    <meta
+      property="og:image"
+      content="https://www.vladuzzul.xyz/assets/images/code-sculpture-1200.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Silver code brackets with a violet slash, original portfolio artwork."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="js/theme.js"></script>
+    <link
+      rel="preload"
+      href="assets/fonts/outfit-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css?v=4" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="js/script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
       <div class="container header-container">
-          <div class="header-left">
-              <a href="index.html">
-                  <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
-              </a>
-          </div>
-          <div class="header-right">
-              <h1 class="logo">Vladuzzul</h1>
-          </div>
-      </div>
-      <nav class="navbar">
-          <ul class="nav-links">
-              <li><a href="about.html">About</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
+        <a class="brand" href="index.html" aria-label="Vladuzzul home">
+          <img
+            src="assets/images/vladuzzul-logo.webp"
+            alt=""
+            class="logo-img"
+            width="50"
+            height="50"
+          />
+          <span class="logo">Vladuzzul</span>
+        </a>
+        <nav class="navbar" id="navigation" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
           </ul>
-      </nav>
-  </header>
-
-  <main class="main-content fade-in container">
-    <div class="contact-card">
-      <h2 class="contact-title">Cozma Vlad</h2>
-      <p class="contact-fllw">Brasov, Romania</p>
-      <p><a href="tel:+40733870563" class="contact-link"><i class="fa-solid fa-phone"></i> +40 733 870 563</a></p>
-      <p><a href="mailto:vladuzz208@icloud.com" class="contact-link"><i class="fa-solid fa-envelope"></i> vladuzz208@icloud.com</a></p>
-      <div class="contact-socials">
-        <span class="contact-fllw">Contact me on:</span>
-        <a href="https://instagram.com/vladuzzul" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/vladuzzul" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.tiktok.com/@vladuzzul" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </nav>
+        <button
+          id="darkModeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
+            >◐</span
+          ><span data-theme-label>Dark</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
       </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+    </header>
+    <main id="main-content" class="container" tabindex="-1">
+      <section class="page-intro">
+        <h1>Let’s talk.</h1>
+        <p>
+          A project, a question, or a shared interest in building things. I’d be
+          happy to hear from you.
+        </p>
+      </section>
+      <div class="contact-layout">
+        <section aria-label="Contact details">
+          <dl class="contact-details">
+            <div class="contact-item">
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:vladuzz208@icloud.com">vladuzz208@icloud.com</a>
+              </dd>
+            </div>
+            <div class="contact-item">
+              <dt>Phone</dt>
+              <dd><a href="tel:+40733870563">+40 733 870 563</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>Location</dt>
+              <dd>Brasov, Romania</dd>
+            </div>
+          </dl>
+          <div class="email-actions">
+            <a href="mailto:vladuzz208@icloud.com" class="button button-primary"
+              >Email <span class="arrow" aria-hidden="true">→</span></a
+            ><button
+              class="button button-secondary copy-button"
+              id="copyEmail"
+              data-email="vladuzz208@icloud.com"
+              type="button"
+            >
+              Copy email <span class="arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p
+            class="copy-status"
+            id="copyStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
+        <aside class="contact-aside reveal">
+          <h2>Cozma Vlad</h2>
+          <p>Software developer. Find my code and connect with me online.</p>
+          <ul class="social-list">
+            <li>
+              <a
+                href="https://github.com/vladuzzul"
+                class="text-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/vladuzzul"
+                class="text-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram <span class="arrow" aria-hidden="true">↗</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@vladuzzul"
+                class="text-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TikTok <span class="arrow" aria-hidden="true">↗</span></a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/vladuzzul"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+          ><a href="mailto:vladuzz208@icloud.com"
+            >Email <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

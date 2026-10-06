@@ -1,56 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Page</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-</head>
-<body>
-  <header class="header">
-    <div class="container header-container">
-      <!-- Left section with logo -->
-      <div class="header-left">
-        <a href="index.html">
-          <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vlad Cozma | Software Developer | Vladuzzul</title>
+    <meta
+      name="description"
+      content="Vlad Cozma, software developer. Explore projects in machine learning, AI, and automation, plus my background in programming and robotics."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://www.vladuzzul.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Vlad Cozma | Software Developer | Vladuzzul"
+    />
+    <meta
+      property="og:description"
+      content="Vlad Cozma, software developer. Explore projects in machine learning, AI, and automation, plus my background in programming and robotics."
+    />
+    <meta property="og:url" content="https://www.vladuzzul.xyz/" />
+    <meta
+      property="og:image"
+      content="https://www.vladuzzul.xyz/assets/images/code-sculpture-1200.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Silver code brackets with a violet slash, original portfolio artwork."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="js/theme.js"></script>
+    <link
+      rel="preload"
+      href="assets/fonts/outfit-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css?v=8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="js/script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+      <div class="container header-container">
+        <a class="brand" href="index.html" aria-label="Vladuzzul home">
+          <img
+            src="assets/images/vladuzzul-logo.webp"
+            alt=""
+            class="logo-img"
+            width="50"
+            height="50"
+          />
+          <span class="logo">Vladuzzul</span>
         </a>
+        <nav class="navbar" id="navigation" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          id="darkModeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
+            >◐</span
+          ><span data-theme-label>Dark</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
       </div>
-      <!-- Right section with name -->
-      <div class="header-right">
-        <h1 class="logo">Vladuzzul</h1>
+    </header>
+    <main id="main-content" class="container home-page" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I’m Vlad Cozma</p>
+          <h1 id="hero-title">
+            <span>Ideas into</span>
+            <span class="accent">working software.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Software developer building modern, fast, and efficient
+            applications.
+          </p>
+          <div class="hero-actions">
+            <a href="projects.html" class="button button-primary"
+              >See My Projects
+              <span class="arrow" aria-hidden="true">→</span></a
+            ><a
+              href="https://github.com/vladuzzul"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="work-heading">
+        <div class="section-heading heading-row">
+          <h2 id="work-heading">Selected projects</h2>
+          <a href="projects.html" class="text-link"
+            >See My Projects <span class="arrow" aria-hidden="true">→</span></a
+          >
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-meta">
+              <span class="tag">Machine learning</span
+              ><span class="tag">Featured project</span>
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://github.com/vladuzzul/Deepfake-Detection"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AI Deepfake Detection</a
+              ><span class="arrow" aria-hidden="true">↗</span>
+            </h3>
+            <p>
+              Detects deepfake images using EfficientNetB0 and TensorFlow/Keras,
+              with MLflow experiment tracking and a FastAPI upload interface.
+            </p>
+            <a
+              href="https://github.com/vladuzzul/Deepfake-Detection"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See project <span class="arrow" aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article class="project-card reveal">
+            <div class="project-meta">
+              <span class="tag">Artificial intelligence</span
+              ><span class="tag">Hackathon</span>
+            </div>
+            <h3 class="project-title">
+              <a
+                href="https://github.com/vladuzzul/SafeBuy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >SafeBuy</a
+              ><span class="arrow" aria-hidden="true">↗</span>
+            </h3>
+            <p>
+              Checking product authenticity with AI-assisted review analysis.
+              Built with two collaborators at a hackathon.
+            </p>
+            <a
+              href="https://github.com/vladuzzul/SafeBuy"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See project <span class="arrow" aria-hidden="true">↗</span></a
+            >
+          </article>
+        </div>
+      </section>
+      <section
+        class="section about-preview reveal"
+        aria-labelledby="about-heading"
+      >
+        <div>
+          <h2 id="about-heading">A developer.<br />Always a learner.</h2>
+          <ul class="skills-inline" aria-label="Programming interests">
+            <li>Machine learning</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Arduino</li>
+            <li>Web development</li>
+          </ul>
+        </div>
+        <div>
+          <p>
+            I’m a software developer exploring machine learning and robotics.
+            From training deepfake detection models to building personal
+            projects, I enjoy learning by solving practical problems.
+          </p>
+          <a href="about.html" class="text-link"
+            >About Me <span class="arrow" aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+      <section class="contact-band reveal" aria-labelledby="contact-heading">
+        <div>
+          <h2 id="contact-heading">Have something in mind?</h2>
+          <p>Let’s talk about code, projects, or an idea.</p>
+        </div>
+        <a href="contact.html" class="button button-primary"
+          >Contact <span class="arrow" aria-hidden="true">→</span></a
+        >
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/vladuzzul"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+          ><a href="mailto:vladuzz208@icloud.com"
+            >Email <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
       </div>
-      <!-- Hamburger menu button -->
-      <button class="menu-toggle" id="menuToggle">☰</button>
-    </div>
-    <!-- Navigation links -->
-    <nav class="navbar">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content fade-in container">
-    <section class="hero">
-      <h2 class="hero-title">Hello!<br> I am a Software Developer!</h2>
-      <p class="hero-subtitle">Building modern, fast, and efficient applications.</p>
-      <br>
-      <br>
-      <a href="projects.html" class="btn-primary">See My Projects</a>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+    </footer>
+  </body>
 </html>

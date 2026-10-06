@@ -1,96 +1,203 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects Page</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Vlad Cozma | Vladuzzul</title>
+    <meta
+      name="description"
+      content="Explore AI Deepfake Detection, SafeBuy, and my projects in management software and automation."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://www.vladuzzul.xyz/projects.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects | Vlad Cozma | Vladuzzul" />
+    <meta
+      property="og:description"
+      content="Explore AI Deepfake Detection, SafeBuy, and my projects in management software and automation."
+    />
+    <meta property="og:url" content="https://www.vladuzzul.xyz/projects.html" />
+    <meta
+      property="og:image"
+      content="https://www.vladuzzul.xyz/assets/images/code-sculpture-1200.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Silver code brackets with a violet slash, original portfolio artwork."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="js/theme.js"></script>
+    <link
+      rel="preload"
+      href="assets/fonts/outfit-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css?v=8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="js/script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
-    <div class="container header-container">
-      <!-- Left section with logo (now a home button) -->
-      <div class="header-left">
-        <a href="index.html">
-          <img src="98985996.png" alt="Vladuzzul Logo" class="logo-img" />
+      <div class="container header-container">
+        <a class="brand" href="index.html" aria-label="Vladuzzul home">
+          <img
+            src="assets/images/vladuzzul-logo.webp"
+            alt=""
+            class="logo-img"
+            width="50"
+            height="50"
+          />
+          <span class="logo">Vladuzzul</span>
         </a>
+        <nav class="navbar" id="navigation" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" aria-current="page">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          id="darkModeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-symbol" data-theme-symbol aria-hidden="true"
+            >◐</span
+          ><span data-theme-label>Dark</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
       </div>
-      <!-- Right section with name -->
-      <div class="header-right">
-        <h1 class="logo">Vladuzzul</h1>
+    </header>
+    <main id="main-content" class="container projects-page" tabindex="-1">
+      <section class="page-intro">
+        <h1>My Projects</h1>
+        <p>
+          Practical applications, collaborative experiments, and a lot of
+          learning along the way.
+        </p>
+      </section>
+      <section class="featured-projects" aria-label="Featured projects">
+        <article class="featured-project reveal">
+          <div class="featured-project-heading">
+            <h2>
+              <a
+                href="https://github.com/vladuzzul/Deepfake-Detection"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AI Deepfake Detection</a
+              >
+            </h2>
+            <div class="project-meta">
+              <span class="featured-label">Featured project</span
+              ><span>Machine learning</span>
+            </div>
+          </div>
+          <p>
+            Detects deepfake images using EfficientNetB0 and TensorFlow/Keras,
+            with MLflow experiment tracking and a FastAPI upload interface.
+          </p>
+          <a
+            href="https://github.com/vladuzzul/Deepfake-Detection"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See project <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </article>
+        <article class="featured-project reveal">
+          <div class="featured-project-heading">
+            <h2>
+              <a
+                href="https://github.com/vladuzzul/SafeBuy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >SafeBuy</a
+              >
+            </h2>
+            <div class="project-meta">
+              <span class="featured-label">Featured project</span
+              ><span>AI / Hackathon</span>
+            </div>
+          </div>
+          <p>
+            Checking product authenticity with AI-assisted review analysis.
+            Built with two collaborators at a hackathon.
+          </p>
+          <a
+            href="https://github.com/vladuzzul/SafeBuy"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See project <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </article>
+      </section>
+      <section class="project-list" aria-label="More projects">
+        <article class="project-row reveal">
+          <h2>Hotel Management System</h2>
+          <p>An app for managing hotel rooms and reservations.</p>
+          <a
+            href="https://github.com/vladuzzul/Hotel-Management-System?tab=readme-ov-file"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See project <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </article>
+        <article class="project-row reveal">
+          <h2>Discord Bot</h2>
+          <p>
+            A Discord moderation bot with server management features and
+            coin-based activities.
+          </p>
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=1446836647844118611&amp;permissions=8&amp;integration_type=0&amp;scope=bot"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Invite to your server
+            <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </article>
+      </section>
+      <section class="contact-band reveal" aria-labelledby="contact-heading">
+        <div>
+          <h2 id="contact-heading">Have something in mind?</h2>
+          <p>Let’s talk about code, projects, or an idea.</p>
+        </div>
+        <a href="contact.html" class="button button-primary"
+          >Contact <span class="arrow" aria-hidden="true">→</span></a
+        >
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/vladuzzul"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span class="arrow" aria-hidden="true">↗</span></a
+          ><a href="mailto:vladuzz208@icloud.com"
+            >Email <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
       </div>
-    </div>
-    <!-- Buttons section -->
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content fade-in container">
-    <section class="projects">
-      <h2 class="section-title">My Projects</h2>
-      <br>
-      <!-- Hotel Management System Card -->
-      <div class="project-card hotel-card">
-        <p class="best-project">My best project</p>
-        <h3>Hotel Management System</h3>
-        <p>An app that can be used to manage rooms and reservations of a hotel.</p>
-        <br>
-        <a href="https://github.com/vladuzzul/Hotel-Management-System?tab=readme-ov-file" class="besttn-best" target="_blank">See project</a>
-        <br>
-      </div>
-      <br>
-
-      <div class="project-card testing-card">
-        <h3>SafeBuy - Product legit check</h3>
-        <p>A platform to verify the authenticity of products by scanning reviews and judging them with AI. The project is made with 2 other collaborators in a Hackathon.</p>
-
-        <br>
-        <a href="https://github.com/vladuzzul/SafeBuy" class="btn-primary" target="_blank">See project</a>
-        <br>
-      </div>
-
-      <br>
-
-      <div class="project-card testing-card">
-        <h3>Discord Bot</h3>
-        <p>A discord bot moderator that can be used for moderating the server and do different activities with coins.</p>
-        <br>
-        <a href="https://discord.com/oauth2/authorize?client_id=1446836647844118611&permissions=8&integration_type=0&scope=bot" class="btn-primary" target="_blank">Invite to your server</a>
-        <br>
-      </div>
-
-      
-
-      <br>
-
-      <div class="project-card testing-card">
-        <h3>Car Rental System</h3>
-        <p>An app that manages a car rental park.</p>
-        <br>
-        <a href="https://github.com/vladuzzul/Car-Rental-System" class="btn-primary" target="_blank">See project</a>
-        <br>
-      </div>
-      
-      
-    </section>
-  </main>
-  
-
-  <footer class="footer">
-    <div class="container">
-        <p>&copy; 2026 Vladuzzul. All rights reserved. Created by Vlad Cozma.</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+    </footer>
+  </body>
 </html>
